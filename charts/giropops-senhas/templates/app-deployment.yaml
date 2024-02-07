@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    {{ .Values.giropopsSenhas.labels | default "app: giropops-senhas" | toYaml | nindent 4 }} 
+  name: giropops-senhas
+spec:
+  replicas: {{ .Values.giropopsSenhas.replicas | default "2" }}
+  selector:
+    matchLabels:
+      app: giropops-senhas
+  template:
+    metadata:
+      labels:
+        app: giropops-senhas
+    spec:
+      containers:
+      - image: {{ .Values.giropopsSenhas.image | default "linuxtips/giropops-senhas:1.0" }} 
+        name: giropops-senhas
+        ports:
+        - containerPort: {{ .Values.giropopsSenhas.port }}
+        imagePullPolicy: Always
+        resources:
+          limits:
+            memory: {{ .Values.giropopsSenhas.resources.limits.memory }}
+            cpu: {{ .Values.giropopsSenhas.resources.limits.cpu }}
+          requests:
+            memory: {{ .Values.giropopsSenhas.resources.requests.memory }}
+            cpu: {{ .Values.giropopsSenhas.resources.requests.cpu }}
