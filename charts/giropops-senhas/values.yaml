@@ -1,7 +1,7 @@
 giropopsSenhas:
   name: "giropops-senhas"
-    # image: "linuxtips/giropops-senhas:1.0"
-    #  replicas: "3"
+  image: "linuxtips/giropops-senhas:1.0"
+  replicas: "3"
   port: 5000
   labels:
     app: "giropops-senhas"
