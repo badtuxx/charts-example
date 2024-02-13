@@ -11,6 +11,6 @@ entries:
     sources:
     - https://github.com/badtuxx/giropops-senhas
     urls:
-    - https://github.com/badtuxx/charts-example/giropops-senhas-0.1.0.tgz
+    - https://badtuxx.github.io/charts-example/giropops-senhas-0.1.0.tgz
     version: 0.1.0
 generated: "2024-02-07T13:08:00.600633828+01:00"
